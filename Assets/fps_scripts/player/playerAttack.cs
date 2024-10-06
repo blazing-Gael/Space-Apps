@@ -21,6 +21,8 @@ public class playerAttack : MonoBehaviour
     public GameObject Axe;
     public GameObject Rod;
     private bool isCrouching;
+    public bool hasAxe = true;
+    public bool gotAxe = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +32,16 @@ public class playerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (gotAxe)
+        {
+            Axe.SetActive(true);
+            gotAxe = false;
+        }
+        if (hasAxe && Input.GetMouseButtonDown(0))
         {
             Attack();
         }
-        if (Input.GetMouseButtonDown(1))
+        if (hasAxe && Input.GetMouseButtonDown(1))
         {
             axeThrow();
         }
@@ -84,7 +91,8 @@ public class playerAttack : MonoBehaviour
 
     void axeThrow()
     {
-        GameObject o = Instantiate(throwingAxe, cam.position, cam.rotation); 
+        animator.SetTrigger("Throw");
+        hasAxe = false;
     }
 
     private void OnDrawGizmos() {

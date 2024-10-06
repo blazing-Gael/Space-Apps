@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class AxeThrow : MonoBehaviour
 {
-    public float rotationSpeed = 45f;
-    public float throwPower = 5.5f;
-    public Rigidbody rb;
-    public Camera cam;
-    public Transform par;
-    public Animator animator;
+    public Transform cam;
+
+    public GameObject throwingAxe;
+    private GameObject Axe;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +22,15 @@ public class AxeThrow : MonoBehaviour
     
     public void axeThrow()
     {
-        
+        /* for (int i = 0; i < gameObject.transform.childCount ; i++)
+        {
+            MeshRenderer m = gameObject.transform.GetChild(i).gameObject.GetComponent<MeshRenderer>();
+            if (m)
+            {
+                m.enabled = false;
+            }
+        } */
+        Axe = Instantiate(throwingAxe, cam.position, cam.rotation);
+        gameObject.SetActive(false);
     }
 }

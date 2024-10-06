@@ -16,6 +16,8 @@ public class DayNightManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Material[] temp = {mornSky,noonSky,eveSky,nightSky};
+        RenderSettings.skybox = temp[Mathf.RoundToInt(TimeOfDay/6)];
         
     }
 

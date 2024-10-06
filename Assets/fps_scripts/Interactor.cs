@@ -51,7 +51,7 @@ public class Interactor : MonoBehaviour
         if (Physics.Raycast(ray, out hit, interactionDistance)) {
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
  
-            if (interactable != null) {
+            if (interactable != null && hit.collider.tag != "Player") {
                 hitSomething = true;
                 interactionText.text = interactable.GetDescription();
  

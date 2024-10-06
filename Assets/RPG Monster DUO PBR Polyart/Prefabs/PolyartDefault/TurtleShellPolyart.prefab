@@ -899,11 +899,11 @@ GameObject:
   - component: {fileID: 1868471488158409348}
   m_Layer: 7
   m_Name: TurtleShellPolyart
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6265206175713501824
 Transform:
   m_ObjectHideFlags: 0

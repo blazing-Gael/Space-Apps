@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Handle
   - Camera
+  - enemy
+  - player
+  - axe
   layers:
   - Default
   - TransparentFX
